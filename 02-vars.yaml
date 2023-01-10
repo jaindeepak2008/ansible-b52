@@ -10,7 +10,7 @@
     - name: Printing hello from task2 of play1
       ansible.builtin.debug:
         msg: Value of URL is {{URL}}}
-      vars:
+      vars:                                        # Declaring the variable at task level ( local variable)
         URL: task.google.com
 
 
