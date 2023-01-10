@@ -10,6 +10,9 @@
     - name: Printing hello from task2 of play1
       ansible.builtin.debug:
         msg: Value of URL is {{URL}}}
+      vars:
+        URL: task.google.com
+
 
 # How do you print a variable in bash ???? ${varName}
 # To print a variable in yaml, we will use {{varName}}
