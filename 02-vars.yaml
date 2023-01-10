@@ -9,7 +9,7 @@
 
     - name: Printing URLs
       ansible.builtin.debug:
-        msg: Value of URL is {{URL}}}
+        msg: Value of URL is {{URL}}
       vars:                                        # Declaring the variable at task level ( local variable)
         URL: task.google.com
 
@@ -23,3 +23,5 @@
 
 # Variable name has to be enclosed in quotes only if it is only entity in the message, if not you can just enclose them in quotes.
 # Always prefer to keep the task name different, In version 6, it used to throw error, In version 7, htats deprecated
+
+# Ansible throws you an error if you use a variable that is not declared ; In bash, it assumes it as a empty variable
