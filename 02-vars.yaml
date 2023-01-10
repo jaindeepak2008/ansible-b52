@@ -3,6 +3,10 @@
   vars:                                             # Declaring variables at play level; All tasks of play can access this variable URL
     URL: play.google.com
   vars_files: demo-vars.yaml
+  vars_prompt:
+    - name: URL 
+      prompt: Enter URL Value 
+
   tasks:
     - name: Printing URL
       ansible.builtin.debug:
@@ -27,4 +31,4 @@
 
 # Ansible throws you an error if you use a variable that is not declared ; In bash, it assumes it as a empty variable
 
-# CLI Variable > Local Variable > Global Variable
+# CLI Variable > Local Variable > Files Variables >  Global Variable
