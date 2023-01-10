@@ -7,11 +7,15 @@
       ansible.builtin.debug:
         msg: "{{URL}}"
 
-    - name: Printing hello from task2 of play1
+    - name: Printing URLs
       ansible.builtin.debug:
         msg: Value of URL is {{URL}}}
       vars:                                        # Declaring the variable at task level ( local variable)
         URL: task.google.com
+
+    - name: Printing CLI_URL
+      ansible.builtin.debug:
+        msg: Value of CLI_URL is "{{CLI_URL}}"
 
 
 # How do you print a variable in bash ???? ${varName}
