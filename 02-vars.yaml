@@ -1,4 +1,4 @@
-- name: Demo on using variabls
+- name: Demo on using variables
   hosts: all
   vars:                                             # Declaring variables at play level; All tasks of play can access this variable URL
     URL: play.google.com
@@ -25,3 +25,5 @@
 # Always prefer to keep the task name different, In version 6, it used to throw error, In version 7, htats deprecated
 
 # Ansible throws you an error if you use a variable that is not declared ; In bash, it assumes it as a empty variable
+
+CLI Variable > Local Variable > Global Variable
