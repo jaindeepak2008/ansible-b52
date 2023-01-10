@@ -9,4 +9,16 @@
       ansible.builtin.debug:
         msg: Hello from task2
 
+- name: Play2
+  hosts: qa
+  tasks:
+    - name: Printing hello from task1 of play2
+      ansible.builtin.debug:
+        msg: Hello from task1 of play2
+
+    - name: Printing hello from task2 of play2
+      ansible.builtin.debug:
+        msg: Hello from task2 of play2
+
+
         #debug: ansible module name to print something : equivalet to echo ion bash
