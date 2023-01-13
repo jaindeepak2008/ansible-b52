@@ -7,4 +7,4 @@
 
     - name: Execute shell Command
       ansible.builtin.debug:
-        msg: "{{OUT}}"
+        msg: "{{OUT.stdout}}"
