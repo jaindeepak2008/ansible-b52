@@ -2,7 +2,7 @@
   hosts: all
   vars:
     actions: false
-    test:1
+    test: 1
   tasks:
     - name: Run this on CentOS machines only
       ansible.builtin.debug:
@@ -22,6 +22,6 @@
     - name: Run this when test variable is defined
       ansible.builtin.debug:
         msg: test variable is declared
-      when: test is defined
+      when: test is undefined
 
 # defined and undefined are reserved/pre-defined keywords in ansible
