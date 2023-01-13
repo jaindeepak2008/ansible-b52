@@ -32,4 +32,4 @@
 
 # Ansible throws you an error if you use a variable that is not declared ; In bash, it assumes it as a empty variable
 
-# CLI Variable > Local Variable > Files Variables >  Global Variable
+# CLI Variable > Local Variable > Files Variables >  Global Variable > Prompt Variable
