@@ -8,6 +8,6 @@
       ansible.builtin.debug:
         msg: OS Distribution = {{ansible_distribution}}
 
-    # - name: 
-    #   ansible.builtin.debug:
-    #     msg: 
+    - name: 
+      ansible.builtin.debug:
+        msg: MAC address is {{ansible_default_ipv4.macaddress}}
