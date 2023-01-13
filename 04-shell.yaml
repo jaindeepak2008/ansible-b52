@@ -22,7 +22,7 @@
 
     - name: Printing some message
       ansible.builtin.debug:
-        msg: "{{Hai I am tomcat}}"
+        msg: Hai I am tomcat
 
 # How to capture the exit code and preserve it in a varianle, so that I can it anywhere?
 
