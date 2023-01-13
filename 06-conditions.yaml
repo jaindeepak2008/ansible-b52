@@ -1,7 +1,7 @@
 - name: Demo on using Conditions
   hosts: all
   vars:
-    actions: true
+    actions: false
   tasks:
     - name: Run this on CentOS machines only
       ansible.builtin.debug:
