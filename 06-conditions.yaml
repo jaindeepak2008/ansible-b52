@@ -22,6 +22,6 @@
     - name: Run this when test variable is defined
       ansible.builtin.debug:
         msg: test variable is declared
-      when: test is undefined
+      when: test is defined
 
 # defined and undefined are reserved/pre-defined keywords in ansible
