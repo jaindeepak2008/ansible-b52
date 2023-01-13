@@ -4,7 +4,7 @@
 
     - name: Checking whether Tomcat is running or not
       ansible.builtin.shell: ps -ef | grep tomcat | grep -v grep
-      register: output
+      register: OUT
       ignore_errors: yes
 
     - name: Starting Tomcat
