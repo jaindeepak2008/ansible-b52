@@ -13,3 +13,7 @@
         msg:  Hi I am Ubuntu
       when: ansible_distribution == "Ubuntu"
 
+    - name: Run this action
+      ansible.builtin.debug:
+        msg: I will only run when Actions is true
+      when: actions
