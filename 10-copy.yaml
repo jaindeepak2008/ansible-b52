@@ -1,0 +1,7 @@
+- name: Demo on copy
+  hosts: all
+  tasks:
+  - name: Copying the file on remote nodes
+    ansible.builtin.copy:
+      src: index.html
+      dest: /home/centos/index.html

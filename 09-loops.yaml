@@ -1,7 +1,7 @@
 - name: Demo on Loops
   hosts: all
   tasks:
-    - name: Printing a Loops
+    - name: Printing a Loop
       ansible.builtin.debug:
         msg: Value in the loop is {{item}}
       loop:
@@ -11,4 +11,4 @@
         - 40
         - 50
 
-# Values in the loop can be referred by the key word / variable "item"
+# Values in the loop can be referred by the key word / variable "item", "item" and "loop" are reserved keywords in ansible
