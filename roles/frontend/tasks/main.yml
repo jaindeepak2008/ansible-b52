@@ -21,6 +21,6 @@
     remote_src: yes           # Since the remote is on a remote machine, ensure you mention remote_src as yes
 
 - name: Copy Nginx Config
-  ansible.builtin.copy:
+  ansible.builtin.copy:       # Copies the files from the files directory
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
