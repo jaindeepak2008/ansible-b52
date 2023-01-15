@@ -24,3 +24,8 @@
   ansible.builtin.copy:       # Copies the files from the files directory
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
+
+- name: Restart Frontend service
+  ansible.builtin.service:
+    name: nginx
+    state: restarted
