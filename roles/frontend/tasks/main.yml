@@ -14,9 +14,9 @@
     path: /usr/share/nginx/html
     state: absent
 
-- name: Copy the Frontend Cntant to Nginx path
+- name: Copy the Frontend Contant to Nginx path
   ansible.builtin.copy:
-    src: /tmp/frintend-main/static/
+    src: /tmp/frintend-main/static
     dest: /usr/share/nginx/html/
     remote_src: yes           # Since the remote is on a remote machine, ensure you mention remote_src as yes
 
