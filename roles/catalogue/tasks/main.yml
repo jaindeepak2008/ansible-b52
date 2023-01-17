@@ -17,10 +17,19 @@
     dest: /tmp
     remote_src: yes
 
+- name: Cleanup of old content
+  ansible.builtin.file:
+    path: /home/{{APPUSER}}/{{COMPONENT}}/
+    state: absent
+
 - name: Copy files to the roboshop home directory
   ansible.builtin.copy:
     src: /tmp/{{COMPONENT}}-main/
     dest: /home/{{APPUSER}}/{{COMPONENT}}/
+    remote_src: yes
     owner: "{{APPUSER}}"
     group: "{{APPUSER}}"
-    remote_src: yes
+
+- name: Installing NodeJs package
+  community.general.npm:
+    path: /home/{{APPUSER}}/{{COMPONENT}}/
