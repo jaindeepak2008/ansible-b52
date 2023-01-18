@@ -5,13 +5,13 @@
 
 - name: Download and extracting
   ansible.builtin.unarchive:
-    src: "https://github.com/stans-robot-project/frontend/archive/main.zip"
+    src: https://github.com/stans-robot-project/frontend/archive/main.zip
     dest: /tmp
-    remote_src: yes           # remote_src: yes: yes tells that the source to be downloaded/copied is not localy available
+    remote_src: yes           # remote_src: yes tells that the source to be downloadied/copied is not locally available
 
 - name: Clearing old HTML content
   ansible.builtin.file:
-    path: /usr/share/nginx/html
+    path: /usr/share/nginx/html/
     state: absent
 
 - name: Copying the Frontend Contant to Nginx path
@@ -21,7 +21,7 @@
     remote_src: yes           # Since the remote is on a remote machine, ensure you mention remote_src as yes
 
 - name: Copying Nginx Config
-  ansible.builtin.copy:       # Copies the files from the files directory
+  ansible.builtin.template:       # Copies the files from the files directory
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
   notify: Restart Nginx       # Only when there is a chanve in the copy file, then only this handeler will be called

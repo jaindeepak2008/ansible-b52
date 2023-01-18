@@ -1,0 +1,4 @@
+- name: Calling Maven Function
+  include_role:
+    name: common
+    tasks_from: maven
