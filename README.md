@@ -75,3 +75,37 @@ A Play is a list of tasks
 
 ### What is a task ? 
 A Task is a list of actions that you want to execute.
+
+
+### Ansible command that we are using to call the playbook
+
+```
+ ansible-playbook -i inv-dev -e ansible_user=centos -e ansible_password=DevOps321 -e COMPONENT=mongodb robot.yml
+ ```
+
+
+ ### files vs templates 
+
+ Files     : just copy the file as is 
+ Templates : Copy the file along with the mentioned variables in the file as a part of the copy 
+
+
+### Ansible Modules
+
+roles-example/
+├── defaults
+│   └── main.yml
+├── files
+├── handlers
+│   └── main.yml
+├── meta
+│   └── main.yml
+├── README.md
+├── tasks
+│   └── main.yml
+├── templates
+├── tests
+│   ├── inventory
+│   └── test.yml
+└── vars
+    └── main.yml
