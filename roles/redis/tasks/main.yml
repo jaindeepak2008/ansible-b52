@@ -1,9 +1,9 @@
-- name: Coping Redis Repo  
+- name: Coping Redis Repo
   ansible.builtin.copy:                    # Copies the file from the files directory
     src: redis.repo
     dest: /etc/yum.repos.d/redis.repo
 
-- name: Installing Redis 
+- name: Installing Redis
   ansible.builtin.package:
     name: redis-6.2.7
     state: present  
@@ -12,14 +12,14 @@
   ansible.builtin.replace:
     path: /etc/{{COMPONENT}}/{{COMPONENT}}.conf
     regexp: '127.0.0.1'
-    replace: '0.0.0.0' 
-  notify: Restarting service 
+    replace: '0.0.0.0'
+  notify: Restarting service
 
-- name: Restarting service 
+- name: Restarting service
   ansible.builtin.service:
     name: "{{COMPONENT}}"
     state: started
-    enabled: true  
+    enabled: true
 
 - name: Set-Hostname
-  ansible.builtin.shell: set-hostname {{COMPONENT}} 
+  ansible.builtin.shell: set-hostname {{COMPONENT}}
