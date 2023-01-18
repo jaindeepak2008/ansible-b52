@@ -33,3 +33,10 @@
 - name: Installing NodeJs package
   community.general.npm:
     path: /home/{{APPUSER}}/{{COMPONENT}}/
+
+- name: Copying Systemd service file
+  ansible.builtin.copy:
+    src: systemd.service
+    dest: /etc/systemd/system/catalogue.service
+    owner: "{{APPUSER}}"
+    group: "{{APPUSER}}"
