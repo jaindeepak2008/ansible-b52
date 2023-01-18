@@ -1,0 +1,29 @@
+- name: Configuring NodejS Repo
+  ansible.builtin.shell: curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash - 
+
+- name: Installing NodeJS 
+  ansible.builtin.package:
+    name: nodejs 
+    state: present 
+
+- name: Creating Roboshop User
+  include_role:
+    name: common
+    tasks_from: create-user
+
+- name: Download and extracting the Component 
+  include_role:
+    name: common
+    tasks_from: download
+
+- name: Install node.js packages
+  community.general.npm:
+    path: /home/{{APPUSER}}/{{COMPONENT}}/
+
+- name: Configuring Service
+  include_role:
+    name: common
+    tasks_from: config-svc
+
+- name: Set-Hostname
+  ansible.builtin.shell: set-hostname {{COMPONENT}} 
