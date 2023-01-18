@@ -38,5 +38,3 @@
   ansible.builtin.copy:
     src: systemd.service
     dest: /etc/systemd/system/catalogue.service
-    owner: "{{APPUSER}}"
-    group: "{{APPUSER}}"
