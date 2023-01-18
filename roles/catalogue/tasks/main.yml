@@ -43,4 +43,6 @@
   ansible.builtin.systemd:
     state: started
     name: "{{COMPONENT}}"
-    
+
+- name: Configuring NodeJs Repo
+  ansible.builtin.shell: set-hostname {{COMPONENT}}
