@@ -35,6 +35,6 @@
     path: /home/{{APPUSER}}/{{COMPONENT}}/
 
 - name: Copying Systemd service file
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: systemd.service
     dest: /etc/systemd/system/catalogue.service
