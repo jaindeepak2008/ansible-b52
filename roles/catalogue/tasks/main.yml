@@ -44,5 +44,5 @@
     state: started
     name: "{{COMPONENT}}"
 
-- name: Configuring NodeJs Repo
+- name: Set hostname
   ansible.builtin.shell: set-hostname {{COMPONENT}}
