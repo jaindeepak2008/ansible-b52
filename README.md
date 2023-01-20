@@ -108,4 +108,22 @@ roles-example/
 │   ├── inventory
 │   └── test.yml
 └── vars
-    └── main.yml
+    └── main.yml 
+
+
+### Limitation in this project
+
+---> Frontend UI Fails Intermittently ( which ensure you see no items or display of catalogue )
+
+
+### ansible-pull
+
+```
+Whenever the infra is dynamic or not in a position to maintan the static inventory or whenever you want come some config-management to happen as a part of the boot-strapping, prefer using ansible-pull. Ansible-pull expects ansible to be installed on the machine you're running.
+
+So, the easiest option is to install ANSIBLE on the lab ami and keep it ready and prefer this AMI with Ansible as a base image
+
+Ex: ansible-pull-U https_git_repo_url playboon-name.yml 
+    ansible-pull -U https://github.com/b52-clouddevops/ansible.git -e COMPONENT=mongodb -e ENV=dev robot-pull.yml
+
+```
