@@ -27,3 +27,6 @@
     read_priv: .*
     write_priv: .*
     state: present
+
+- name: Set-Hostname
+  ansible.builtin.shell: set-hostname {{COMPONENT}}
