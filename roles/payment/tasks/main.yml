@@ -24,13 +24,13 @@
 - name: Updating the UID in ini file
   ansible.builtin.lineinfile:
     path: /home/{{APPUSER}}/{{COMPONENT}}/{{COMPONENT}}.ini
-    regexexp: '^uid'
+    regexp: '^uid'
     line: uid = {{APPUSER_INFO.uid}}
 
-- name: Updating the GID in ini file
+- name: Updating the GID in the ini file
   ansible.builtin.lineinfile:
     path: /home/{{APPUSER}}/{{COMPONENT}}/{{COMPONENT}}.ini
-    regexexp: '^gid'
+    regexp: '^gid'
     line: gid = {{APPUSER_INFO.group}}
 
 - name: Install python dependencies
