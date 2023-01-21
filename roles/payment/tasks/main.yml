@@ -20,7 +20,7 @@
 - name: Install python dependencies
   ansible.builtin.pip:
     requirements: /home/{{APPUSER}}/{{COMPONENT}}/
-    executable: pip3
+    executable: pip3.3
 
 - name: Set-Hostname
   ansible.builtin.shell: set-hostname {{COMPONENT}}
