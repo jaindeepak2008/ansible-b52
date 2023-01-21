@@ -5,7 +5,7 @@
   ansible.builtin.shell: curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | sudo bash
 
 
-- name: Install RabbitMQ Server
+- name: Installing RabbitMQ Server
   ansible.builtin.yum:
     name:
       - rabbitmq-server
