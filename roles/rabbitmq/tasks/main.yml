@@ -9,7 +9,6 @@
   ansible.builtin.yum:
     name: rabbitmq-server
     state: installed
-    enabled: yes
 
 - name: Starting RabbitMQ server
   ansible.builtin.systemd:
