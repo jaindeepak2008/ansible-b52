@@ -16,6 +16,18 @@
   ansible.builtin.debug:
     msg: "{{APPUSER_INFO}}"
 
+- name: Updating the UID in ini file
+  ansible.builtin.lineinfile:
+    path: /home/{{APPUSER}}/{{COMPONENT}}/{{COMPONENT}}.ini
+    search_string: '^uid'
+    line: uid = {{APPUSER_INFO.uid}}
+
+- name: Updating the GID in ini file
+  ansible.builtin.lineinfile:
+    path: /home/{{APPUSER}}/{{COMPONENT}}/{{COMPONENT}}.ini
+    search_string: '^gid'
+    line: gid = {{APPUSER_INFO.group}}
+
 - name: Downloading and extracting the Component
   include_role:
     name: common
