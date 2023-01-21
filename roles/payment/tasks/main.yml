@@ -16,6 +16,11 @@
   ansible.builtin.debug:
     msg: "{{APPUSER_INFO}}"
 
+- name: Downloading and extracting the Component
+  include_role:
+    name: common
+    tasks_from: download
+
 - name: Updating the UID in ini file
   ansible.builtin.lineinfile:
     path: /home/{{APPUSER}}/{{COMPONENT}}/{{COMPONENT}}.ini
@@ -27,11 +32,6 @@
     path: /home/{{APPUSER}}/{{COMPONENT}}/{{COMPONENT}}.ini
     search_string: '^gid'
     line: gid = {{APPUSER_INFO.group}}
-
-- name: Downloading and extracting the Component
-  include_role:
-    name: common
-    tasks_from: download
 
 - name: Install python dependencies
   ansible.builtin.pip:
