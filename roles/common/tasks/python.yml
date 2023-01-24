@@ -44,6 +44,3 @@
   include_role:
     name: common
     tasks_from: config-svc
-
-- name: Set-Hostname
-  ansible.builtin.shell: set-hostname {{COMPONENT}}
