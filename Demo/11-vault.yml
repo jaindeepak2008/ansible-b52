@@ -1,6 +1,15 @@
-- name: Demo on vault 
-  hosts: localhost              # Mans telling to execute the playbook tasks on the ansible-controller itself
-  tasks:
-    - name: Printing
-      debug:
-        msg: PASSWORD= abc232323
+- name: Demo on vault  
+  hosts: localhost              # Means telling to execute the playbook tasks on the ansible-controller itself 
+  vars:
+    PASS: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          33613966306331353639633064343063313433663863353535613164383639346433396137316266
+          6665366237663632633533303834386365316633306135320a386134623762373935383962333135
+          64643465613939376134633531336338316233323031316261666633333062633664643063346336
+          3165323462613165620a313764316139316231646433323337383030366538663535656430343864
+          3764
+
+  tasks:  
+    - name: Printing 
+      debug: 
+        msg: PASSWORD = {{PASS}}
