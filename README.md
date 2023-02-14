@@ -124,8 +124,7 @@ Whenever the infra is dynamic or not in a position to maintan the static invento
 So, the easiest option is to install ANSIBLE on the lab ami and keep it ready and prefer this AMI with Ansible as a base image
 
 Ex: ansible-pull-U https_git_repo_url playboon-name.yml 
-    ansible-pull -U https://github.com/b52-clouddevops/ansible.git -e COMPONENT=mongodb -e ENV=dev robot-pull.yml
+    ansible-pull -U https://github.com/jaindeepak2008/ansible-b52.git -e COMPONENT=mongodb -e ENV=dev robot-pull.yml
 
 ```
 
-https://github.com/b52-devops/ansible-repo-b52.git

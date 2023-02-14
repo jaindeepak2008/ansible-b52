@@ -1,3 +1,9 @@
+- name: Create APP directory
+  ansible.builtin.file:
+    path: /home/{{APPUSER}}/{{COMPONENT}}
+    state: directory
+    mode: '0755'
+
 - name: Cleanup of Old Content
   ansible.builtin.file:
     path: /home/{{APPUSER}}/{{COMPONENT}}/
