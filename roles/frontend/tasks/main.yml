@@ -3,22 +3,23 @@
     name: nginx
     state: present
 
-- name: Download and extracting
-  ansible.builtin.unarchive:
-    src: https://github.com/stans-robot-project/frontend/archive/main.zip
-    dest: /tmp
-    remote_src: yes           # remote_src: yes tells that the source to be downloadied/copied is not locally available
-
 - name: Clearing old HTML content
   ansible.builtin.file:
     path: /usr/share/nginx/html/
     state: absent
 
-- name: Copying the Frontend Contant to Nginx path
-  ansible.builtin.copy:
-    src: /tmp/frontend-main/static/
+- name: Download and extracting the Component
+  ansible.builtin.unarchive:
+    src: http://172.31.2.21:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APP_VERSION}}.zip
     dest: /usr/share/nginx/html/
-    remote_src: yes           # Since the remote is on a remote machine, ensure you mention remote_src as yes
+    remote_src: yes
+
+# Uncomment this only if you use GitHub to download the code directly
+# - name: Copying the Frontend Contant to Nginx path
+#   ansible.builtin.copy:
+#     src: /tmp/frontend-main/static/
+#     dest: /usr/share/nginx/html/
+#     remote_src: yes           # Since the remote is on a remote machine, ensure you mention remote_src as yes
 
 - name: Copying Nginx Config
   ansible.builtin.template:       # Copies the files from the files directory

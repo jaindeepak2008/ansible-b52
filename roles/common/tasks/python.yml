@@ -21,7 +21,7 @@
 - name: Downloading and extracting the Component
   include_role:
     name: common
-    tasks_from: download
+    tasks_from: download-nexus
 
 - name: Updating the UID in ini file
   ansible.builtin.lineinfile:
