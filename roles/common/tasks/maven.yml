@@ -15,11 +15,12 @@
     name: common
     tasks_from: download-nexus
 
-- name: Preparing Maven Artifact
-  ansible.builtin.shell: mvn clean package && mv target/{{COMPONENT}}-1.0.jar {{COMPONENT}}.jar
-  args:
-    chdir: /home/{{APPUSER}}/{{COMPONENT}}/
-  become_user: "{{APPUSER}}"
+# Uncomment it only when you download artifact from nexus
+# - name: Preparing Maven Artifact
+#   ansible.builtin.shell: mvn clean package && mv target/{{COMPONENT}}-1.0.jar {{COMPONENT}}.jar
+#   args:
+#     chdir: /home/{{APPUSER}}/{{COMPONENT}}/
+#   become_user: "{{APPUSER}}"
 
 - name: Configuring Service
   include_role:
