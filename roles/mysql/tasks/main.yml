@@ -48,7 +48,7 @@
 - name: Download and extracting MySQL 
   ansible.builtin.include_role:
     name: common
-    tasks_from: download-nexus
+    tasks_from: download
 
 - name: Load Schema
   community.mysql.mysql_db:
