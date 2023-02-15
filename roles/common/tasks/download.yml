@@ -3,6 +3,7 @@
     path: /home/{{APPUSER}}/{{COMPONENT}}
     state: directory
     mode: '0755'
+  ignore_errors: yes
 
 - name: Download and extracting the Component
   ansible.builtin.unarchive:
